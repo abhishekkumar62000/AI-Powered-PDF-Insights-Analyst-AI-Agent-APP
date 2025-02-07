@@ -1,0 +1,47 @@
+Q1: 10. What is Direct Query?
+A1: <think>
+Okay, so I need to figure out what Direct Query is in Power BI. I remember that Power BI works with data, but I'm not exactly sure how Direct Query fits into that. Let me think about what I know.
+
+I know that Power BI can connect to various data sources like Excel, SQL Server, or even cloud-based databases. When you connect to a data source, you can either load the data into Power BI or not. If you load it, you're creating a model that's stored within Power BI, right? That's probably the default way because it allows for faster data processing and more advanced analytics features.
+
+But then there's this term Direct Query. I think it's a different way of connecting to data. Maybe instead of loading the data into Power BI, it just connects to the source directly. So, when you create a report, it queries the data source each time you view it. That would mean the data isn't stored in Power BI, which could be useful for very large datasets that you can't or don't want to store locally.
+
+Wait, but if the data isn't stored in Power BI, does that affect performance? I suppose it might because every time you interact with the report, it has to go back to the source. But maybe it's better for real-time data since you always get the latest information without having to refresh a local copy.
+
+I also recall that Direct Query has some limitations. For example, some advanced features in Power BI might not work if you're using Direct Query because those features rely on having the data loaded into the model. So you might not be able to use certain DAX functions or calculations that need the data to be present locally.
+
+Another thing is that Direct Query is often used when the data is too big to fit into Power BI's memory. If you have a massive dataset, you can't load it all into Power BI, so you just query it directly from the source. But then you have to make sure the source is optimized for queries, otherwise, the reports might be slow.
+
+I think there are also considerations about data refresh. With Direct Query, you don't need to refresh the data in Power BI because it's always pulling from the source. But if the source data changes, you see those changes immediately, which can be both good and bad. It's good for real-time updates but might cause issues if the data is being changed frequently and you're in the middle of a report session.
+
+So, putting it all together, Direct Query is a way to connect to a data source without loading the data into Power BI. It's useful for large datasets, real-time data, and when you don't need the advanced analytics features that require the data to be loaded. However, it might lead to slower performance and limits the use of certain Power BI features.
+
+I should also check if there are any specific use cases where Direct Query is particularly beneficial. For example, if you're connecting to a database that's updated frequently and you always want the latest data, Direct Query would be the way to go. Or if you're dealing with a data source that's too large to handle within Power BI's memory constraints.
+
+Wait, but how does it handle joins and relationships? If the data isn't loaded into Power BI, does it rely on the source system to handle those operations? That might be another consideration because if the source isn't optimized for joins, performance could suffer.
+
+Also, I think there are some security aspects. Since the data isn't stored in Power BI, access control is handled by the source system. That could be more straightforward in some environments but might also mean you have to manage permissions in multiple places.
+
+In summary, Direct Query in Power BI allows you to create reports by querying data directly from the source without loading it into Power BI. This is useful for large datasets, real-time data, and when you don't need advanced analytics features. However, it may result in slower performance and limits the use of certain features that require the data to be loaded into the model.
+</think>
+
+**Answer:**
+
+Direct Query in Power BI is a method of connecting to a data source without loading the data into Power BI. Instead, it queries the data source directly each time a report is viewed. This approach is particularly useful for several scenarios:
+
+1. **Large Datasets**: When dealing with datasets too large to fit into Power BI's memory, Direct Query allows you to work with the data without loading it, thus avoiding memory constraints.
+
+2. **Real-Time Data**: It provides real-time data access, ensuring that reports always reflect the latest changes in the source data without needing manual refreshes.
+
+3. **Source-Specific Operations**: Since data processing is handled by the source system, it leverages the source's capabilities for operations like joins and relationships, which can be beneficial if the source is optimized for such tasks.
+
+4. **Security Management**: Access control is managed at the source, simplifying permissions management in some environments.
+
+However, Direct Query has some drawbacks:
+
+- **Performance**: Reports may perform slower because each interaction requires a query to the source.
+- **Feature Limitations**: Certain advanced Power BI features that require data to be loaded into the model are not available.
+- **Dependency on Source System**: The performance and capabilities of the source system significantly impact the effectiveness of Direct Query reports.
+
+In summary, Direct Query is ideal for scenarios requiring real-time data access and handling large datasets, but it may compromise on performance and feature availability.
+
